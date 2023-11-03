@@ -261,14 +261,14 @@ function generateReports() {
     .setChartType(Charts.ChartType.PIE)
     .addRange(chartRange)
     .setPosition(2, 3, 0, 0)
-    .setOption('title', 'Érdeklődő üzenetek száma')
+    .setOption('title', 'Number of the messages of inquiry')
     .build();
 
   chartSheet.insertChart(pieChart);
 }
 
 function updateStatus(row, index, sheet) {
-// For example, if the 'Feedback time?' column is filled
+// For example, if the 'Got any Feedback?' column is filled
   if (row[15]) {
     sheet.getRange('A' + (index + 2) + ':Q' + (index + 2)).setBackground('#00ff00'); // Green background
     sheet.getRange('F' + (index + 2)).setValue('Feedback has been given');
