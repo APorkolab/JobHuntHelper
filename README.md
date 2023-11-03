@@ -70,7 +70,7 @@ This repository contains a Google Apps Script designed to help job seekers manag
 
 ## Associated Medium Blog Post
 
-For a comprehensive guide and best practices on using this job application tracker, please refer to our Medium blog post: [Your Guide to Managing Job Applications with Automation](#).
+For a comprehensive guide and best practices on using this job application tracker, please refer to our Medium blog post: [Job Search Juggler: Automate Your Application Follow-Ups](https://link.medium.com/DvmGNw6ZpEb).
 
 ## Contributing
 
