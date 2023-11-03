@@ -1,5 +1,5 @@
 # JobHuntHelper
-This repository contains a Google Apps Script designed to help job seekers manage and track their job applications within a Google Spreadsheet. The script automates follow-ups, manages application statuses, and organizes job search efforts with customizable settings. For a detailed explanation and walkthrough, check out the associated Medium blog post at [XY link](#).
+This repository contains a Google Apps Script designed to help job seekers manage and track their job applications within a Google Spreadsheet. The script automates follow-ups, manages application statuses, and organizes job search efforts with customizable settings. For a detailed explanation and walkthrough, check out the associated Medium blog post at [my Medium blog](https://slumbersolver.medium.com/job-search-juggler-automate-your-application-follow-ups-bfbf6631a39a).
 
 ## Features
 
