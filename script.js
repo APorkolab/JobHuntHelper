@@ -13,6 +13,7 @@ const SETTINGS = {
   followUpMessage: 'The position has likely been filled',
   followUpBackground: '#ea4335', // Red background
   responseReceivedBackground: '#00ff00', // Green background
+  applicationMethodColumn:  'C',
 };
 
 // Function to create triggers
@@ -70,7 +71,8 @@ function checkApplications() {
       Logger.log('The row is empty or undefined, or the application date is missing: ' + (i + 2));
       continue;
     }
-
+    let applicationMethod = row[SETTINGS.applicationMethodColumn.charCodeAt(0) - 'A'.charCodeAt(0)];
+    let isEmailApplication = applicationMethod === 'e-mail'; // Check if the application method is E-mail
     let cellDate = new Date(row[SETTINGS.applicationDateColumn.charCodeAt(0) - 'A'.charCodeAt(0)]);
     cellDate.setHours(0, 0, 0, 0);
     let daysDiff = Math.floor((currentDate - cellDate) / (1000 * 3600 * 24));
@@ -87,7 +89,7 @@ function checkApplications() {
     let emailSent = backgrounds[i][SETTINGS.emailSentColumn.charCodeAt(0) - 'A'.charCodeAt(0)] === SETTINGS.followUpBackground;
     let responseReceived = backgrounds[i][SETTINGS.statusUpdateColumn.charCodeAt(0) - 'A'.charCodeAt(0)] === SETTINGS.responseReceivedBackground;
 
-    if (!eventExists && !emailSent && !responseReceived && daysDiff >= SETTINGS.reminderDaysAfter && cellColor === requiredColor) {
+    if (!eventExists && !emailSent && !responseReceived && daysDiff >= SETTINGS.reminderDaysAfter && cellColor === requiredColor && isEmailApplication) {
       createCalendarEvent(row, i + 2);
       createEmailDraft(row, i + 2);
     }
